@@ -1,6 +1,9 @@
 # Description
 Provides a graphical user interface for easy changing of dedicated server settings.  I wasn't a huge fan of editing the text file and thought hey wouldn't it be great if there was an easier way and thus this tool was born.  Written in Qt and C++ for cross platform support.
 
+# Usage
+Your current Settings.ini file should be loaded automatically showing you the settings as they are currently set or the defaults if they are unset.  If the file failed to load or you wish to edit a different file select the File dropdown and select Open to bring up a file browsing window to locate the settings file you wish to edit.   When you are finished editing go back to the File dropdown and select save, you will either get a success or fail message depending on whether or not the changes were committed.
+
 # Development Status
 This is a "work in progress" and by no means complete.  Basic functionality seems to be there but this is practically untested at this stage so use at your own risk.
 
