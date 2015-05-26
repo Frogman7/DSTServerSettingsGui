@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     viewModel = new ViewModel();
 
     QObject::connect(ui->actionOpen, &QAction::triggered, this, &MainWindow::loadSettings);
@@ -29,7 +30,7 @@ void MainWindow::saveSettings()
 {
     QMessageBox msgbox;
 
-    if (this->SaveServerSettings())
+    if (!this->SaveServerSettings())
     {
         msgbox.setText("There was an error saving the file, changes not saved");
         msgbox.exec();

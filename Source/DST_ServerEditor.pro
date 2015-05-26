@@ -20,3 +20,10 @@ HEADERS  += mainwindow.h \
     viewmodel.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += qdarkstyle\style.qrc
+
+RC_ICONS = dst_server_gui.ico
+
+DISTFILES += \
+    dst_server_gui_icon.ico
