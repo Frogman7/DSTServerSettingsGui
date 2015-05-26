@@ -9,6 +9,8 @@ Wishlist
 - Linux (and possibly Mac) if it doesn't already work
 - Add expandable area for 'Advanced' options
 - Add another tabbed screen for 'World Generation' options.
+- Add modlist/adminlist support
+- Make settings 'configurable' through external xml file.
 - Document code
 
 # Notes
