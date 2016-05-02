@@ -115,23 +115,23 @@ bool MainWindow::SaveServerSettings()
 
 void MainWindow::PopulateCheckboxes()
 {
-    const unsigned short int* saveSlots = viewModel->getSaveSlots();
+    const QVector<unsigned short int> saveSlots = *viewModel->getSaveSlots();
 
-    for (unsigned int i = 0; i < 5; i++)
+    for (unsigned int i = 0; i < saveSlots.count(); i++)
     {
         ui->saveSlot_CB->addItem(QString::number(saveSlots[i]), saveSlots[i]);
     }
 
-    const unsigned short int* tickRates = viewModel->getTickRates();
+    const QVector<unsigned short int> tickRates = *viewModel->getTickRates();
 
-    for (unsigned int i = 0; i < 4; i++)
+    for (unsigned short int i = 0; i < tickRates.count(); i++)
     {
         ui->tickRate_CB->addItem(QString::number(tickRates[i]), tickRates[i]);
     }
 
-    const QString* gameModes = viewModel->getGameTypes();
+    const QVector<QString> gameModes = *viewModel->getGameTypes();
 
-    for (unsigned int i = 0; i < 3; i++)
+    for (unsigned short int i = 0; i < gameModes.count(); i++)
     {
         QString gameModeName = gameModes[i];
         gameModeName.replace(0,1,gameModeName[0].toUpper());

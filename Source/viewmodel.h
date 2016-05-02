@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QSettings>
+#include <QVector>
 
 class ViewModel
 {
@@ -67,9 +68,9 @@ public:
     bool getPauseOnEmpty() const;
     void setPauseOnEmpty(const bool &value);
 
-    const unsigned short int* getSaveSlots() const;
-    const unsigned short int* getTickRates() const;
-    const QString* getGameTypes() const;
+    const QVector<unsigned short int>* getSaveSlots() const;
+    const QVector<unsigned short int>* getTickRates() const;
+    const QVector<QString>* getGameTypes() const;
 
     void LoadSettings(QString filePath);
     void SaveSettings(QString filePath);

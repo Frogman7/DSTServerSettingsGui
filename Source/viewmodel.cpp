@@ -15,20 +15,19 @@ const char* snapshotsSetting = "enable_snapshots";
 const char* autosaverSetting = "enable_autosaver";
 const char* pauseOnEmptySetting = "pause_when_empty";
 
-unsigned short int* saveSlots;
-unsigned short int* tickRates;
-QString* gameModes;
+QVector<unsigned short int>* saveSlots;
+QVector<unsigned short int>* tickRates;
+QVector<QString>* gameModes;
 
 ViewModel::ViewModel()
 {
-
 }
 
 ViewModel::~ViewModel()
 {
-    delete[] saveSlots;
-    delete[] tickRates;
-    delete[] gameModes;
+    delete saveSlots;
+    delete tickRates;
+    delete gameModes;
 }
 
 QString ViewModel::getServerName() const
@@ -171,36 +170,36 @@ void ViewModel::setGameType(const QString &value)
     gameMode = value;
 }
 
-const unsigned short int* ViewModel::getSaveSlots() const
+const QVector<unsigned short int>* ViewModel::getSaveSlots() const
 {
-    saveSlots = new unsigned short int[5];
+    saveSlots = new QVector<unsigned short int>(5);
 
-    for (unsigned int i = 0; i < 5; i++)
+    for (unsigned short int i = 0; i < 5; i++)
     {
-        saveSlots[i] = i + 1;
+        (*saveSlots)[i] = i + 1;
     }
 
     return saveSlots;
 }
 
-const QString* ViewModel::getGameTypes() const
+const QVector<QString>* ViewModel::getGameTypes() const
 {
-    gameModes = new QString[3];
-    gameModes[0] = "endless";
-    gameModes[1] = "survival";
-    gameModes[2] = "wilderness";
+    gameModes = new QVector<QString>(3);
+    (*gameModes)[0] = "endless";
+    (*gameModes)[1] = "survival";
+    (*gameModes)[2] = "wilderness";
 
     return gameModes;
 }
 
-const unsigned short int* ViewModel::getTickRates() const
+const QVector<unsigned short int>* ViewModel::getTickRates() const
 {
-    tickRates = new unsigned short int[4];
+    tickRates = new QVector<unsigned short int>(4);
 
-    tickRates[0] = 10;
-    tickRates[1] = 15;
-    tickRates[2] = 30;
-    tickRates[3] = 60;
+    (*tickRates)[0] = 10;
+    (*tickRates)[1] = 15;
+    (*tickRates)[2] = 30;
+    (*tickRates)[3] = 60;
 
     return tickRates;
 }
